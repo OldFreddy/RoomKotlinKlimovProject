@@ -4,7 +4,6 @@ import androidx.room.*
 
 
 @Entity(tableName = "cats")
-
 data class Cat(
     @PrimaryKey(autoGenerate = true)
     val uid: Int,
@@ -14,12 +13,6 @@ data class Cat(
     @ColumnInfo(name = "age")
     val age: Int,
 
-    val breed: String,
-
-    @Ignore
-    val gender: String
-
-
-
+    val breed: String
 )
 

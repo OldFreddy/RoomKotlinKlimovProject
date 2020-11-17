@@ -1,8 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
 }
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -46,9 +47,9 @@ dependencies {
 
     // Room
     implementation "android.arch.persistence.room:runtime:1.0.0"
-    kapt "android.arch.persistence.room:compiler:1.0.0" // не как в Java!
+    kapt "android.arch.persistence.room:compiler:1.0.0"
 
 // Необязательно
-    testImplementation "android.arch.persistence.room:testing:1.0.0"
-    implementation "android.arch.persistence.room:rxjava2:1.0.0"
+    testImplementation "android.arch.persistence.room:testing:1.1.1"
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
 }
