@@ -21,7 +21,24 @@ class MainActivity : AppCompatActivity() {
             val cats: List<Cat> = database?.getCatDAO()?.getAllCats()!!
 
             // выводим имя кота с индексом 1
-            textView.text = cats[1].name
+            textView.text = cats[0].name
+
+
+
+            button2.setOnClickListener {
+
+                runOnUiThread {
+                    cats[0].name = "<FFasf"
+                    database?.getCatDAO()?.update(cats[0])
+                    val catsNewName: List<Cat> = database?.getCatDAO()?.getAllCats()!!
+
+                    textView.text = catsNewName[0].name
+                }
+
+            }
+
+
         }
     }
+
 }
